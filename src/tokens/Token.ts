@@ -45,33 +45,33 @@ class Token implements IEqualityComparer<Token> {
 
     public equals(other: Token): boolean {
         if (other != null) {
-            if (this instanceof BooleanToken && other instanceof BooleanToken) {
-                return (this as BooleanToken).Value == (other as BooleanToken).Value;
-            }
-            if (this instanceof ShortToken && other instanceof ShortToken) {
-                return (this as ShortToken).Value == (other as ShortToken).Value;
-            }
-            if (this instanceof IntegerToken && other instanceof IntegerToken) {
-                return (this as IntegerToken).Value == (other as IntegerToken).Value;
-            }
-            if (this instanceof LongToken && other instanceof LongToken) {
-                return (this as LongToken).Value == (other as LongToken).Value;
-            }
-            if (this instanceof FloatToken && other instanceof FloatToken) {
-                return (this as FloatToken).Value == (other as FloatToken).Value;
-            }
-            if (this instanceof DoubleToken && other instanceof DoubleToken) {
-                return (this as DoubleToken).Value == (other as DoubleToken).Value;
-            }
-            if (this instanceof StringToken && other instanceof StringToken) {
-                return (this as StringToken).Value == (other as StringToken).Value;
-            }
-            if (this instanceof CommentToken && other instanceof CommentToken) {
-                return (this as CommentToken).Value == (other as CommentToken).Value;
-            }
-            if (this instanceof IdentifierToken && other instanceof IdentifierToken) {
-                return (this as IdentifierToken).Value == (other as IdentifierToken).Value;
-            }
+            // if (this instanceof BooleanToken && other instanceof BooleanToken) {
+            //     return (this as BooleanToken).Value == (other as BooleanToken).Value;
+            // }
+            // if (this instanceof ShortToken && other instanceof ShortToken) {
+            //     return (this as ShortToken).Value == (other as ShortToken).Value;
+            // }
+            // if (this instanceof IntegerToken && other instanceof IntegerToken) {
+            //     return (this as IntegerToken).Value == (other as IntegerToken).Value;
+            // }
+            // if (this instanceof LongToken && other instanceof LongToken) {
+            //     return (this as LongToken).Value == (other as LongToken).Value;
+            // }
+            // if (this instanceof FloatToken && other instanceof FloatToken) {
+            //     return (this as FloatToken).Value == (other as FloatToken).Value;
+            // }
+            // if (this instanceof DoubleToken && other instanceof DoubleToken) {
+            //     return (this as DoubleToken).Value == (other as DoubleToken).Value;
+            // }
+            // if (this instanceof StringToken && other instanceof StringToken) {
+            //     return (this as StringToken).Value == (other as StringToken).Value;
+            // }
+            // if (this instanceof CommentToken && other instanceof CommentToken) {
+            //     return (this as CommentToken).Value == (other as CommentToken).Value;
+            // }
+            // if (this instanceof IdentifierToken && other instanceof IdentifierToken) {
+            //     return (this as IdentifierToken).Value == (other as IdentifierToken).Value;
+            // }
             if (this.TokenType == other.TokenType && this.TokenType != TokenType.ValueArray && this.ValueType == other.ValueType) {
                 return true;
             }
