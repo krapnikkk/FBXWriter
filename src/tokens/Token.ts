@@ -1,4 +1,4 @@
-enum TokenType {
+export enum TokenType {
     EndOfStream,
     Comment,
     OpenBrace,
@@ -11,7 +11,7 @@ enum TokenType {
     ValueArray
 }
 
-enum ValueType {
+export enum ValueType {
     None,
     Boolean,
     Byte,  // valid for array only
@@ -22,12 +22,12 @@ enum ValueType {
     Double
 }
 
-interface IEqualityComparer<T> {
+export interface IEqualityComparer<T> {
     equals(x: T, y: T): boolean;
     getHashCode(obj: T): number;
 }
 
-class Token implements IEqualityComparer<Token> {
+export class Token implements IEqualityComparer<Token> {
     public readonly TokenType: TokenType;
     public readonly ValueType: ValueType;
 

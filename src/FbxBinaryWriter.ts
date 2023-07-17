@@ -91,7 +91,7 @@ class FbxBinaryWriter extends FbxBinary {
   
     // Writes an FBX file to the output
     public Write(document: FbxDocument): void {
-      this.writeHeader(this.memory);
+        FbxBinary.writeHeader(this.memory);
       this.stream.setInt32(this.stream.byteOffset, document.version);
       // TODO: Do we write a top level node or not? Maybe check the version?
       for (const node of document.nodes) {
@@ -99,12 +99,12 @@ class FbxBinaryWriter extends FbxBinary {
       }
   
       this.WriteNode(document, undefined);
-      const footer = this.generateFooterCode(document);
+      const footer = FbxBinary.generateFooterCode(document);
       const footerBuffer = new Uint8Array(footer.length);
       for (let i = 0; i < footer.length; i++) {
         footerBuffer[i] = footer.charCodeAt(i);
       }
       this.stream.set(footerBuffer, this.stream.byteOffset + this.stream.byteLength);
-      this.writeFooter(this.memory, document.version);
+      FbxBinary.writeFooter(this.memory, document.version);
     }
 }
